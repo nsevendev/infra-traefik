@@ -1,0 +1,7 @@
+# que pour config mac evec lima
+services:
+  traefik:
+    env_file:
+      - .env
+    volumes:
+      - "${DOCKER_SOCKET_PATH:-/var/run/docker.sock}:/var/run/docker.sock:ro" # lima
