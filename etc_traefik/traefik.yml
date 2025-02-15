@@ -1,0 +1,28 @@
+providers:
+  file:
+    directory: "/etc/traefik/dynamic"
+    watch: true
+  docker:
+    exposedByDefault: false
+
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+accesslog: true
+
+api:
+  dashboard: true
+  insecure: true
+
+log:
+  level: debug
+
+tls:
+  stores:
+    default:
+      defaultCertificate:
+        certFile: "/certs/selfsigned.pem"
+        keyFile: "/certs/selfsigned.key"
