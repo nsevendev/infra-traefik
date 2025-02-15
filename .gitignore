@@ -1,0 +1,6 @@
+.idea
+.env
+certs/*
+!certs/.gitkeep
+letsencrypt/*
+!letsencrypt/.gitkeep
