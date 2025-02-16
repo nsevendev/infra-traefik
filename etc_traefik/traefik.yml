@@ -10,6 +10,8 @@ entryPoints:
     address: ":80"
   websecure:
     address: ":443"
+  db:
+    address: ":5432"
 
 accesslog: true
 
