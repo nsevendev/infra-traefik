@@ -1,9 +1,9 @@
 # Détection de Lima et récupération du bon socket Docker
-IS_LIMA=$(shell uname -r | grep -i lima >/dev/null && echo 1 || echo 0)
-DOCKER_SOCKET_PATH=$(if $(IS_LIMA),$(shell echo /run/user/501/docker.sock),/var/run/docker.sock)
+IS_LIMA=$(shell ps aux | grep -v grep | grep -i lima >/dev/null && echo 1 || echo 0)
+DOCKER_SOCKET_PATH=$(if $(filter 1,$(IS_LIMA)),/run/user/501/docker.sock,/var/run/docker.sock)
 
-# Commandes Docker Compose avec passage de la variable DOCKER_SOCKET_PATH si sur mac (sur linux pas de override)
-DOCKER_COMPOSE_DEV=DOCKER_SOCKET_PATH=$(DOCKER_SOCKET_PATH) docker compose -f compose.dev.yaml $(if $(IS_LIMA),-f compose.override.yaml)
+# Commandes Docker Compose avec la bonne socket
+DOCKER_COMPOSE_DEV=DOCKER_SOCKET_PATH=$(DOCKER_SOCKET_PATH) docker compose -f compose.dev.yaml $(if $(filter 1,$(IS_LIMA)),-f compose.override.yaml)
 DOCKER_COMPOSE_PROD=docker compose -f compose.prod.yaml
 DOCKER_EXE=docker exec -it
 
@@ -99,3 +99,7 @@ shell: ## go to shell container
 status: ## Check status of Traefik
 	@echo "🔍 Vérification du statut des conteneurs..."
 	docker ps | grep traefik || echo "⚠️ Traefik ne tourne pas !"
+
+debug-sock:
+	@echo "IS_LIMA=$(IS_LIMA)"
+	@echo "DOCKER_SOCKET_PATH=$(DOCKER_SOCKET_PATH)"
