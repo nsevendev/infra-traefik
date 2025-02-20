@@ -1,5 +1,10 @@
 # infra-traefik
 
+## Spécificitées
+
+- sur linux après avoir installé mkcert sur linux via la commande apt,
+  executer la command  `mkcert -install`. vous pouvez continuer l'installation
+
 ## Mode dev  
 
 - copier coller le fichier `.env.example` et renommer le en `.env`  
@@ -19,4 +24,4 @@ pour cela 2 commandes existe `make cert-mac` ou `make cert-linux` choisissez cel
 
 - pour le mode prod veuillez recommencer la procedure avec le fichier `.env.example`  
 - vous n'avez pas besoin de faire la procedure des certificats SSL, cela est géré d'une autre façon.  
-- utilisez toujours les commandes du Makefile pour lancer le mode prod, rappel de la commande `make`  
+- utilisez toujours les commandes du Makefile pour lancer le mode prod, rappel de la commande `make`
