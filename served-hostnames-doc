@@ -1,9 +1,10 @@
 localhost
-# lm4
-heracles.dev => front
-heph.api.dev.local => back
-heph.r.dev.local => rabbit
+
+# lp4
+heracles.dev
+heph.api.local
+heph.r.local
+
 # todo-cda
-todo-cda.dev.local => front
-todo-cda.api.dev.local => back
-todo-cda.r.dev.local => rabbit
+todo-cda.local
+todo-cda.api.local
