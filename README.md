@@ -2,23 +2,23 @@
 
 ## Spécificitées
 
-- sur linux après avoir installé mkcert sur linux via la commande apt,
-  executer la command  `mkcert -install`. vous pouvez continuer l'installation
+- Après avoir installé mkcert sur linux via la commande apt,
+  executer la command  `mkcert -install` afin de certifié les futurs certificat.  
+  vous pouvez continuer l'installation  
 
 ## Mode dev  
 
 - copier coller le fichier `.env.example` et renommer le en `.env`  
-changer les ports à l'interieur si besoin  
+changer les ports à l'interieur si besoin (par default laisser les ports deja configuré)  
 - verifier que le host que vous voulez creer est bien dans la liste `served-hostnames`  
 - vous pouvez taper la commande `make`pour voir les commandes disponible  
 - avant de lancer en mode dev, vous devez creer les certificats SSL 
 lancer la commande `make cert`pour supprimer les anciens certificats et générer des nouveaux  
-si le fichier n'a pas été modifier depuis la derniere generation les clef ne seront pas regenérer  
-supprimer directement les anciennes clef avec la commande `make cert-clean` si vous voulez forcer la re-génération de clefs.  
-- une fois les clefs generer il faut il associer à votre systeme pour que le navigateur les prenne en compte  
-pour cela 2 commandes existe `make cert-mac` ou `make cert-linux` choisissez celle qui vous convient et lancé la.  
-- une fois les clefs creer ou modifier + ajouter à votre system, lancer traefik en mode dev avec la commande  
-`make dev` et rendez-vous sur `localhost:8080` pour accèder au dashboard
+
+NOTE: si le fichier n'a pas été modifier depuis la derniere generation les clef ne seront pas regenérer supprimer directement les anciennes clef avec la commande `make cert-clean` si vous voulez forcer la re-génération de clefs.   
+
+- une fois les clefs generer il faut les associer à votre systeme pour que le navigateur les prenne en compte pour cela 2 commandes existe `make cert-mac` ou `make cert-linux` choisissez celle qui vous convient et lancé la.  
+- une fois les clefs creer ou modifier + ajouter à votre system, lancer traefik en mode dev avec la commande `make dev` et rendez-vous sur `localhost:8080` pour accèder au dashboard  
 
 ## Mode prod  
 
