@@ -24,7 +24,7 @@ help: ## Outputs this help screen
 
 ## —— 🎵 🐳 Mode DEV 🐳 🎵 ——————————————————————————————————
 
-dev: ## Start Traefik mode dev
+up: ## Start Traefik mode dev
 	@echo "🚀 🐳 🎵 Lancement de Traefik en mode DEV..."
 	$(DOCKER_COMPOSE_DEV) up -d
 	@echo "✅ 🐳 🎵 Start en mode DEV OK..."
@@ -83,7 +83,7 @@ prod-delete-cert: ## Force le renouvellement des certificats Let's Encrypt
 
 ## —— 🐳 Commande générique 🐳 ——————————————————————————————————
 
-stop: ## Stop All Traefik
+down: ## Stop All Traefik
 	@echo "🛑 Arrêt de Traefik, arrêt de tout les containers du réseau..."
 	$(DOCKER_COMPOSE_DEV) down --remove-orphans
 	$(DOCKER_COMPOSE_PROD) down --remove-orphans
