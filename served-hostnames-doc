@@ -1,14 +1,1 @@
-localhost
-
-# lp4
-heracles.dev
-heph.api.local
-heph.r.local
-heph.db.local
-
-# todo-cda
-todo-cda.local
-todo-cda.api.local
-todo-cda.r.local
-todo-cda.db.local
-
+*.local
