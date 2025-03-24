@@ -38,13 +38,13 @@ make cert-linux
 
 ```bash
 # lancer traefik en mode dev
-make dev
+make up
 
 # accèder au dashboard traefik
 # ouvrir votre navigateur et taper "localhost:8080"
 
 # arreter traefik
-make stop
+make down
 ```
 
 ## Démarrer traefik en mode prod
