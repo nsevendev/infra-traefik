@@ -15,7 +15,7 @@ services:
       - "./traefik.yml:/etc/traefik/traefik.yml"
       - "./letsencrypt:/letsencrypt"
     command:
-      - "--configFile=/traefik.yml"
+      - "--configFile=/etc/traefik/traefik.yml"
     networks:
       - traefik-nseven
 
