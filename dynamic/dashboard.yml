@@ -1,0 +1,16 @@
+http:
+  routers:
+    dashboard:
+      rule: "PathPrefix(`/dashboard`) || Host(`217.154.20.209`)"
+      entryPoints:
+        - web
+        - websecure
+      service: api@internal
+      middlewares:
+        - dashboard-stripprefix
+
+  middlewares:
+    dashboard-stripprefix:
+      stripPrefix:
+        prefixes:
+          - /dashboard
