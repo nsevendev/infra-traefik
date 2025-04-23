@@ -1,6 +1,6 @@
 # infra-traefik
 
-*NOTE : vous pouvez taper la commande `make`pour voir les commandes disponible*  
+*NOTE: vous pouvez taper la commande `make`pour voir les commandes disponible*  
 
 ## Spécificitées
 
